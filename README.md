@@ -16,7 +16,7 @@
 ## 01 - Umgebung
 * Vagrant
 * Visual Studio
-* Virtual Box 6.1
+* Virtual Box 6.0
 * Git-Client
 * VM
 
@@ -53,9 +53,10 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 
 *vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert
 
-**Bestehende VM aus Vagrant Cloud erstellen**
-1. OS auswhlen von der Cloud https://app.vagrantup.com/boxes/search Ubuntu/xenial64 ausgewählt.
-2. 
+**Bestehende VM aus Vagrant Cloud erstellen (Webserver)**
+1. Mit *vagrant init* Vagrantfile im gewünschten Verzeichnis erstellt.
+2. OS auswhlen von der Cloud https://app.vagrantup.com/boxes/search Ubuntu/xenial64 für meine VM usgewählt.
+3. 
 
 
 
