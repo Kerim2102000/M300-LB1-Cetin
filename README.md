@@ -11,6 +11,7 @@
     - [03.5 - Markdown](#03.5---markdown)
     - [03.6 - Systemsicherheit](#03.6---systemsicherheit)
   - [04 - Lernschritte](#04---lernschritte)
+    - [04.1 - Vagrant](#04.1---Vagrant)
 
 ## 01 - Umgebung
 * Vagrant
@@ -45,3 +46,10 @@ Noch keine Vorkenntnisse vorhanden.
 Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Planung von Sicherheitskonzepten schon in der TBZ realsiert. Diese Kenntnisse sollen für die LB1 ausreichen. 
 
 ## 04 - Lernschritte
+
+## 04.1 - Vagrant
+
+**Befehle**
+
+*vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert 
+
