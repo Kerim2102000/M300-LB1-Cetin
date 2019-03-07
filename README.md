@@ -56,7 +56,7 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 **Bestehende VM aus Vagrant Cloud erstellen (Webserver)**
 1. Mit *vagrant init* Vagrantfile im gewünschten Verzeichnis erstellt.
 2. OS auswhlen von der Cloud https://app.vagrantup.com/boxes/search Ubuntu/xenial64 für meine VM usgewählt.
-3. 
+3. Vagrantfile mit den entsprechenden Parameter erstellen
 
 
 
