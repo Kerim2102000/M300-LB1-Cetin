@@ -51,5 +51,11 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 
 **Befehle**
 
-*vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert 
+*vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert
+
+**Bestehende VM aus Vagrant Cloud erstellen**
+1. OS auswhlen von der Cloud https://app.vagrantup.com/boxes/search Ubuntu/xenial64 ausgewählt.
+2. 
+
+
 
