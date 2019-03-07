@@ -4,3 +4,4 @@
 * Visual Studio
 * Virtual Box 6.1
 * Git-Client
+* VM
