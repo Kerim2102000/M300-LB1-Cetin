@@ -44,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		echo "Alias /adminer.php /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
 		sudo a2enconf adminer.conf 
 		sudo service apache2 restart 
-	  echo '127.0.0.1 localhost webserver01\n192.168.55.100 database01' > /etc/hosts
+	  echo '127.0.0.1 localhost webserver01\n192.168.10.100 database01' > /etc/hosts
 SHELL
 	end  
  end
