@@ -52,11 +52,29 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 **Befehle**
 
 *vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert
+*vagrant up* - Das Vagrantfile wird gelesen und die VMs werden erstellt
 
-**Bestehende VM aus Vagrant Cloud erstellen (Webserver)**
+**Bestehende VM aus Vagrant Cloud erstellen (Webserver und Datenbank)**
 1. Mit *vagrant init* Vagrantfile im gewünschten Verzeichnis erstellt.
 2. OS auswhlen von der Cloud https://app.vagrantup.com/boxes/search Ubuntu/xenial64 für meine VM usgewählt.
 3. Vagrantfile mit den entsprechenden Parameter erstellen
+4. Mit dem Befehl *vagrant up* werden nun die Virtuellen Maschinen erstellt
+
+**Netzwerkplan**
+
++---------------------------------------------------------------+
+! Notebook - Schulnetz 10.x.x.x und Privates Netz 192.168.10.1  !                 
+! Port: 8080 (192.158.10.101:80)                                !	
+!                                                               !	
+!    +--------------------+          +---------------------+    !
+!    ! Web Server         !          ! Datenbank Server    !    !       
+!    ! Host: webserver01  !          ! Host: database01    !    !
+!    ! IP: 192.168.10.101 ! <------> ! IP: 192.168.10.100  !    !
+!    ! Port: 80           !          ! Port 3306           !    !
+!    ! Nat: 8080          !          ! Nat: -              !    !
+!    +--------------------+          +---------------------+    !
+!                                                               !
++---------------------------------------------------------------+
 
 
 
