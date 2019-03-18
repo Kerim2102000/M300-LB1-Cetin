@@ -51,13 +51,13 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 
 **Befehle**
 
-*vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert
-*vagrant up* - Das Vagrantfile wird gelesen und die VMs werden erstellt
-*vagrant ssh* - Baut eine SSH-Verbindung zur gewünschten VM auf
-*vagrant status* - Zeigt den aktuellen Status der VM an
-*vagrant port* - Zeigt die Weitergeleiteten Ports der VM an
-*vagrant halt* - Stoppt die laufende Virtuelle Maschine
-*vagrant destroy* - Stoppt die Virtuelle Maschine und zerstört sie.
+  *vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert
+  *vagrant up* - Das Vagrantfile wird gelesen und die VMs werden erstellt
+  *vagrant ssh* - Baut eine SSH-Verbindung zur gewünschten VM auf
+  *vagrant status* - Zeigt den aktuellen Status der VM an
+  *vagrant port* - Zeigt die Weitergeleiteten Ports der VM an
+  *vagrant halt* - Stoppt die laufende Virtuelle Maschine
+  *vagrant destroy* - Stoppt die Virtuelle Maschine und zerstört sie.
 
 **Bestehende VM aus Vagrant Cloud erstellen (Webserver und Datenbank)**
 1. Mit *vagrant init* Vagrantfile im gewünschten Verzeichnis erstellt.
@@ -162,12 +162,12 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
     ProxyPassReverse /master http://master
 
 
-##05.4 - SSH-Tunnel
+## 05.4 - SSH-Tunnel
 
 
 
 
-##05.5 - Webserver per HTTPS sichern
+## 05.5 - Webserver per HTTPS sichern
 
     # Default Konfiguration in /etc/apache2/sites-available freischalten (wird nach sites-enabled verlinkt
     sudo a2ensite default-ssl.conf
@@ -207,7 +207,7 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
         </VirtualHost>
   </IfModule>
 
-    # Apache Server frisch starten
+    # Apache Server neustarten
     sudo service apache2 restart
 
 
