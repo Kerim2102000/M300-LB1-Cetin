@@ -12,6 +12,15 @@
     - [03.6 - Systemsicherheit](#03.6---systemsicherheit)
   - [04 - Lernschritte](#04---lernschritte)
     - [04.1 - Vagrant](#04.1---Vagrant)
+    - [04.2 - Netzwerkplan](#04.1---netzwerkplan)
+    - [04.3 - Installation - Webserver - und -Datenbank](#04.1---installation - Webserver - und - Datenbank)
+  - [05 - Sicherheitsaspekte](#04.1---Sicherheitsaspekte)
+    - [05.1 - UFW - Firwall](#04.1---UFW-Firewall)
+    - [05.2 - Reverse-Proxy](#04.1---Reverse-Proxy)
+    - [05.3 - SSH-Tunnel](#04.1---SSH-Tunnel)
+    - [05.4 - Webserver per HTTPS sichern](#04.1---Webserver per HTTPS sichern)
+  - [06 - Wissenzuwachs](#04.1---Wissenzuwachs)
+  - [07 - Reflektion](#04.1---Reflektion)
 
 ## 01 - Umgebung
 * Vagrant
@@ -129,7 +138,7 @@ Zugriff testen
     $ curl -f 192.168.10.101
     $ curl -f 192.168.10.100:3306
 
-### 05.3 - Reverse-Proxy
+### 05.2 - Reverse-Proxy
 
     Installation Dazu müssen folgende Module installiert werden:
     $ sudo apt-get install libapache2-mod-proxy-html
@@ -162,12 +171,12 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
     ProxyPassReverse /master http://master
 
 
-### 05.4 - SSH-Tunnel
+### 05.3 - SSH-Tunnel
 
 
 
 
-### 05.5 - Webserver per HTTPS sichern
+### 05.4 - Webserver per HTTPS sichern
 
     # Default Konfiguration in /etc/apache2/sites-available freischalten (wird nach sites-enabled verlinkt
     sudo a2ensite default-ssl.conf
@@ -212,7 +221,7 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
 
 
 
-### 06 - Vergleich Vorwissen - Wissenszuwachs
+### 06 - Wissenszuwachs
 
 **Linux**
 Hat sich mit ein paar Recherche gesteigert 
