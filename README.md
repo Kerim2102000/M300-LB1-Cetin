@@ -65,7 +65,7 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 3. Vagrantfile mit den entsprechenden Parameter erstellen
 4. Mit dem Befehl *vagrant up* werden nun die Virtuellen Maschinen erstellt
 
-**Netzwerkplan**
+## 04.02 - Netzwerkplan
 
 +---------------------------------------------------------------+
 ! Notebook - Schulnetz 10.x.x.x und Privates Netz 192.168.10.1  !                 
@@ -85,7 +85,7 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 **Installation Webserver und Datenbank**
 Web Server mit Apache und MySQL User Interface Adminer und Datenbank Server mit MySQL.
 Für die Installation der beiden VMs wurde ein Vagrantfile erstellt, in dem alle Angaben wie IP, Hostname, OS etc. befindet. Ausserdem befindet sich ein Shellscript das auf der Datenbankserver MySQL installiert. Auf dem Webserver wurde Apache installiert und auf dem Datenbankserver «Adminer SQL» um die Dantebank über das Web zu verwalten. 
-Das Userinterface ist über http://localhost:8080/adminer.php erreichbar  
+Das Userinterface ist über http://localhost:8080/adminer.php erreichbar mit dem User 'admin' anmelden. 
 
 **Sicherheitsaspekte**
 Beim Sicherheitsaspekt wurde folgende Einstellungen gemacht.
@@ -109,14 +109,19 @@ Firewall-Regeln
     *sudo ufw allow 80/tcp*
     *exit*
 
+    *# Port 443 (HTTPS) öffnen für alle*
+    *vagrant ssh web*
+    *sudo ufw allow 443/tcp*
+    *exit*
+
     *# Port 22 (SSH) nur für den Host (wo die VM laufen) öffnen*
     *vagrant ssh web*
-    *sudo ufw allow from [Meine-IP] to any port 22*
+    *sudo ufw allow to any port 22*
     *exit*
 
     *# Port 3306 (MySQL) nur für den web Server öffnen*
     *vagrant ssh database*
-    *sudo ufw allow from [IP der Web-VM] to any port 3306*
+    *sudo ufw allow from 192.168.10.100 to any port 3306*
     *exit*
 
 Zugriff testen
@@ -164,7 +169,72 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
 
 
 
-**Webserver per HTTPS erreichbar**
+**Webserver per HTTPS sichern**
+
+    # Default Konfiguration in /etc/apache2/sites-available freischalten (wird nach sites-enabled verlinkt
+    sudo a2ensite default-ssl.conf
+
+    # SSL Modul in Apache2 aktivieren
+    sudo a2enmod ssl
+
+    # Optional HTTP deaktivieren
+    sudo a2dissite 000-default.conf 
+
+    # Datei /etc/apache2/ports.conf editieren und <Listen 80> durch Voranstellen von # deaktivieren
+    sudo nano /etc/apache2/ports.conf
+
+    # Unter default-ssl.conf die Server IP eintragen 
+    sudo nano /etc/apache2/sites-available/default-ssl.conf
+    <IfModule mod_ssl.c>
+        <VirtualHost _default_:443>
+                ServerName 192.168.10.101
+
+                DocumentRoot /var/www/html
+
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+                SSLEngine on
+
+                SSLCertificateFile      /etc/ssl/certs/apache-selfsigned.crt
+                SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+
+                <FilesMatch "\.(cgi|shtml|phtml|php)$">
+                                SSLOptions +StdEnvVars
+                </FilesMatch>
+                <Directory /usr/lib/cgi-bin>
+                                SSLOptions +StdEnvVars
+                </Directory>
+
+        </VirtualHost>
+  </IfModule>
+
+    # Apache Server frisch starten
+    sudo service apache2 restart
+
+
+
+## 05 Vergleich Vorwissen - Wissenszuwachs
+
+**Linux**
+Hat sich mit ein paar Recherche gesteigert 
+
+**Virtualisierung**
+Bei der Virtualisierung war mein Vorwissen schon recht gut das konnte ich noch im Bericht Linux verbessern.
+
+**Vagrant**
+Vagrant war für mich neu Land das mir im Verlauf der LB01 
+
+**Versionverwaltung/Git**
+Die Versionsverwaltung hat sich sehr positiv bewährt, weil ich jede Veränderung im Vagrantfile sofort erkennen konnte. 
+
+**Markdown**
+Mit den Erstellen von Markdown funktionierte es von Anfang an gut. 
+
+**Systemsicherheit**
+
+## 06 Reflektion
+Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. 
 
 
 
