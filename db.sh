@@ -15,9 +15,8 @@ sudo sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mys
 
 # User fuer Remote Zugriff einrichten - aber nur fuer Host web 192.168.10.101
 mysql -uroot -Welcome1 <<%EOF%
-	CREATE USER 'root'@'192.168.10.101' IDENTIFIED BY 'admin';
-	GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.10.101';
-	FLUSH PRIVILEGES;
+	CREATE USER 'admin'@'192.168.10.101' IDENTIFIED BY '1234';
+	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'192.168.10.101';
 %EOF%
 
 # Restart fuer Konfigurationsaenderung
