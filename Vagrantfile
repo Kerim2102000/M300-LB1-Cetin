@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.define "database" do |db|
+  config.vm.define "database01" do |db|
     db.vm.box = "ubuntu/xenial64"
 	db.vm.provider "virtualbox" do |vb|
 	  vb.memory = "512"  
@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   	db.vm.provision "shell", path: "db.sh"
   end
   
-  config.vm.define "web" do |web|
+  config.vm.define "webserver01" do |web|
     web.vm.box = "ubuntu/xenial64"
     web.vm.hostname = "webserver01"
     web.vm.network "private_network", ip:"192.168.10.101" 
