@@ -47,7 +47,7 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 
 ## 04 - Lernschritte
 
-## 04.1 - Vagrant
+### 04.1 - Vagrant
 
 **Befehle**
 
@@ -65,7 +65,7 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 3. Vagrantfile mit den entsprechenden Parameter erstellen
 4. Mit dem Befehl *vagrant up* werden nun die Virtuellen Maschinen erstellt
 
-## 04.2 - Netzwerkplan
+### 04.2 - Netzwerkplan
 
 
     +---------------------------------------------------------------+
@@ -83,15 +83,15 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
     +---------------------------------------------------------------+
 
 
-## 04.3 - Installation Webserver und Datenbank
+### 04.3 - Installation Webserver und Datenbank
 Web Server mit Apache und MySQL User Interface Adminer und Datenbank Server mit MySQL.
 Für die Installation der beiden VMs wurde ein Vagrantfile erstellt, in dem alle Angaben wie IP, Hostname, OS etc. befindet. Ausserdem befindet sich ein Shellscript das auf der Datenbankserver MySQL installiert. Auf dem Webserver wurde Apache installiert und auf dem Datenbankserver «Adminer SQL» um die Dantebank über das Web zu verwalten. 
 Das Userinterface ist über https://192.168.10.101/adminer.php erreichbar mit dem User 'admin' anmelden. 
 
-## 05 - Sicherheitsaspekte
+### 05 - Sicherheitsaspekte
 Beim Sicherheitsaspekt wurde folgende Einstellungen gemacht.
 
-## 05.1 - UFW Firewall
+### 05.1 - UFW Firewall
 
 Ausgabe der offenen Ports
     $ netstat -tulpen
@@ -129,9 +129,9 @@ Zugriff testen
     $ curl -f 192.168.10.101
     $ curl -f 192.168.10.100:3306
 
-## 05.3 - Reverse-Proxy
+### 05.3 - Reverse-Proxy
 
-Installation Dazu müssen folgende Module installiert werden:
+    Installation Dazu müssen folgende Module installiert werden:
     $ sudo apt-get install libapache2-mod-proxy-html
     $ sudo apt-get install libxml2-dev
 
@@ -162,12 +162,12 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
     ProxyPassReverse /master http://master
 
 
-## 05.4 - SSH-Tunnel
+### 05.4 - SSH-Tunnel
 
 
 
 
-## 05.5 - Webserver per HTTPS sichern
+### 05.5 - Webserver per HTTPS sichern
 
     # Default Konfiguration in /etc/apache2/sites-available freischalten (wird nach sites-enabled verlinkt
     sudo a2ensite default-ssl.conf
@@ -212,7 +212,7 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
 
 
 
-## 06 - Vergleich Vorwissen - Wissenszuwachs
+### 06 - Vergleich Vorwissen - Wissenszuwachs
 
 **Linux**
 Hat sich mit ein paar Recherche gesteigert 
@@ -231,7 +231,7 @@ Mit den Erstellen von Markdown funktionierte es von Anfang an gut.
 
 **Systemsicherheit**
 
-## 07 - Reflektion
+### 07 - Reflektion
 Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. 
 
 
