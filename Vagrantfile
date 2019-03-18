@@ -34,8 +34,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	web.vm.provision "shell", inline: <<-SHELL
 		sudo apt-get update
 		sudo apt-get -y install debconf-utils apache2 nmap
-		sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password admin'
-		sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password admin'
+		sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password 1234'
+		sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 1234'
 		sudo apt-get -y install php libapache2-mod-php php-curl php-cli php-mysql php-gd mysql-client  
 		# Admininer SQL UI 
 		sudo mkdir /usr/share/adminer
