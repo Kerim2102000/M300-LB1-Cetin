@@ -20,6 +20,12 @@
     - [05.3 - SSH-Tunnel](#05.3---SSH-Tunnel)
     - [05.4 - Webserver per HTTPS sichern](#05.4---Webserver-per-HTTPS-sichern)
   - [06 - Wissenzuwachs](#06---Wissenzuwachs)
+    - [06.1 - Linux](#06.1---Linux)
+    - [06.2 - Virtualisierung](#06.2---Virtualisierung)
+    - [06.3 - Vagrant](#06.3---Vagrant)
+    - [06.4 - Versionverwaltung/Git](#06.4---Versionverwaltung/Git)
+    - [06.5 - Markdown](#06.5---Markdown) 
+    - [06.6 - Systemsicherheit](#06.6---Systemsicherheit)     
   - [07 - Reflektion](#04---Reflektion)
 
 ## 01 - Umgebung
@@ -71,12 +77,10 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
   *vagrant port* - Zeigt die Weitergeleiteten Ports der VM an
 
   *vagrant halt* - Stoppt die laufende Virtuelle Maschine
-<<<<<<< HEAD
 
   *vagrant destroy* - Stoppt die Virtuelle Maschine und zerstört sie.
-=======
+
   *vagrant destroy* - Stoppt die Virtuelle Maschine und zerstört sie
->>>>>>> 65a5534515c205c91eb55cbcaf8b2cb45798ca78
 
 **Bestehende VM aus Vagrant Cloud erstellen (Webserver und Datenbank)**
 1. Mit *vagrant init* Vagrantfile im gewünschten Verzeichnis erstellt.
@@ -233,23 +237,24 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
 
 ## 06 - Wissenszuwachs
 
-**Linux**
-Meine Linux kenntnise 
+### 06.1 - Linux
+Meine Linux kenntnisse haben sich mit recherchen stark verbessert. 
 
-**Virtualisierung**
+### 06.2 - Virtualisierung
 Bei der Virtualisierung war mein Vorwissen schon recht gut das konnte ich noch im Bericht Linux verbessern.
 
-**Vagrant**
-Vagrant war für mich neu Land das mir im Verlauf der LB01 
+### 06.3 - Vagrant
+Mit Vagrat zu arbeiten hat sehr viel spass gemacht, es hat mir aufgezeigt das es ein sehr mächtiges Programm ist das vieles bitet. 
 
-**Versionverwaltung/Git**
+### 06.4 - Versionverwaltung/Git
 Die Versionsverwaltung hat sich sehr positiv bewährt, weil ich jede Veränderung im Vagrantfile sofort erkennen konnte. 
 
-**Markdown**
-Mit den Erstellen von Markdown funktionierte es von Anfang an gut. Es brauchte eine gewisse zeit um ein paar  
+### 06.5 - Markdown
+Mit den Erstellen von Markdown funktionierte es von Anfang an gut. Es brauchte eine gewisse zeit um ein schöne Darstellung mit den Grössen und Schriften
+hinzubekommen. Doch am schluss ist mir auch dies gelungen. 
 
-**Systemsicherheit**
-Bei implementieren der Sicherheitsaspekten
+### 06.6 - Systemsicherheit
+Bei implementieren der Sicherheitsaspekten verlief alles recht gut es gab keine schwierigkeiten. 
 
 ## 07 - Reflektion
 Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. Am Anfang
