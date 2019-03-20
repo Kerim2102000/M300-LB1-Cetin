@@ -3,7 +3,7 @@
 # Inhaltsverzeichnis
   - [01 - Umgebung](#01---umgebung)
   - [02 - Verwendetet Tools](#02---verwendetet-tools)
-  - [03 - Wissenstand](#02---wissenstand)
+  - [03 - Wissenstand](#03---wissenstand)
     - [03.1 - Linux](#03.1---linux)
     - [03.2 - Virtualisierung](#03.2---virtualisierung)
     - [03.3 - Vagrant](#03.3---vagrant)
@@ -12,15 +12,15 @@
     - [03.6 - Systemsicherheit](#03.6---systemsicherheit)
   - [04 - Lernschritte](#04---lernschritte)
     - [04.1 - Vagrant](#04.1---Vagrant)
-    - [04.2 - Netzwerkplan](#04.1---netzwerkplan)
-    - [04.3 - Installation - Webserver - und -Datenbank](#04.1---installation - Webserver - und - Datenbank)
-  - [05 - Sicherheitsaspekte](#04.1---Sicherheitsaspekte)
-    - [05.1 - UFW - Firwall](#04.1---UFW-Firewall)
-    - [05.2 - Reverse-Proxy](#04.1---Reverse-Proxy)
-    - [05.3 - SSH-Tunnel](#04.1---SSH-Tunnel)
-    - [05.4 - Webserver per HTTPS sichern](#04.1---Webserver per HTTPS sichern)
-  - [06 - Wissenzuwachs](#04.1---Wissenzuwachs)
-  - [07 - Reflektion](#04.1---Reflektion)
+    - [04.2 - Netzwerkplan](#04.2---netzwerkplan)
+    - [04.3 - Installation Webserver und Datenbank](#04.3---installation-Webserver-und-Datenbank)
+  - [05 - Sicherheitsaspekte](#05---Sicherheitsaspekte)
+    - [05.1 - UFW - Firwall](#05.1---UFW-Firewall)
+    - [05.2 - Reverse-Proxy](#05.2---Reverse-Proxy)
+    - [05.3 - SSH-Tunnel](#05.3---SSH-Tunnel)
+    - [05.4 - Webserver per HTTPS sichern](#05.4---Webserver-per-HTTPS-sichern)
+  - [06 - Wissenzuwachs](#06---Wissenzuwachs)
+  - [07 - Reflektion](#04---Reflektion)
 
 ## 01 - Umgebung
 * Vagrant
@@ -51,7 +51,7 @@ Erfahrung im Betrieb mit Versionverwaltung Document Management Systemen und Clou
 ### 03.5 - Markdown
 Noch keine Vorkenntnisse vorhanden.
 
-### 03.4 - Systemsicherheit
+### 03.6 - Systemsicherheit
 Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Planung von Sicherheitskonzepten schon in der TBZ realsiert. Diese Kenntnisse sollen für die LB1 ausreichen. 
 
 ## 04 - Lernschritte
@@ -61,11 +61,17 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
 **Befehle**
 
   *vagrant init* - Damit wird im aktuellen Verzeichnis die Vagant-Umgebung initialisiert
+
   *vagrant up* - Das Vagrantfile wird gelesen und die VMs werden erstellt
+
   *vagrant ssh* - Baut eine SSH-Verbindung zur gewünschten VM auf
+
   *vagrant status* - Zeigt den aktuellen Status der VM an
+
   *vagrant port* - Zeigt die Weitergeleiteten Ports der VM an
+
   *vagrant halt* - Stoppt die laufende Virtuelle Maschine
+
   *vagrant destroy* - Stoppt die Virtuelle Maschine und zerstört sie.
 
 **Bestehende VM aus Vagrant Cloud erstellen (Webserver und Datenbank)**
@@ -97,7 +103,7 @@ Web Server mit Apache und MySQL User Interface Adminer und Datenbank Server mit 
 Für die Installation der beiden VMs wurde ein Vagrantfile erstellt, in dem alle Angaben wie IP, Hostname, OS etc. befindet. Ausserdem befindet sich ein Shellscript das auf der Datenbankserver MySQL installiert. Auf dem Webserver wurde Apache installiert und auf dem Datenbankserver «Adminer SQL» um die Dantebank über das Web zu verwalten. 
 Das Userinterface ist über https://192.168.10.101/adminer.php erreichbar mit dem User 'admin' anmelden. 
 
-### 05 - Sicherheitsaspekte
+## 05 - Sicherheitsaspekte
 Beim Sicherheitsaspekt wurde folgende Einstellungen gemacht.
 
 ### 05.1 - UFW Firewall
@@ -221,7 +227,7 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
 
 
 
-### 06 - Wissenszuwachs
+## 06 - Wissenszuwachs
 
 **Linux**
 Hat sich mit ein paar Recherche gesteigert 
@@ -240,8 +246,9 @@ Mit den Erstellen von Markdown funktionierte es von Anfang an gut.
 
 **Systemsicherheit**
 
-### 07 - Reflektion
-Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. 
+## 07 - Reflektion
+Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. Am Anfang
+hatte ich ein paar Probleme mit der Datenbank irgendwas funktionierte nich mit den Zugriffsrechten.  
 
 
 
