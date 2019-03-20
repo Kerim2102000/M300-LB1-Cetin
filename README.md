@@ -71,8 +71,12 @@ Firewalls im Betrieb konfiguriert Linux Basierend SonicWall, ZyWALL, Cisco. Plan
   *vagrant port* - Zeigt die Weitergeleiteten Ports der VM an
 
   *vagrant halt* - Stoppt die laufende Virtuelle Maschine
+<<<<<<< HEAD
 
   *vagrant destroy* - Stoppt die Virtuelle Maschine und zerstört sie.
+=======
+  *vagrant destroy* - Stoppt die Virtuelle Maschine und zerstört sie
+>>>>>>> 65a5534515c205c91eb55cbcaf8b2cb45798ca78
 
 **Bestehende VM aus Vagrant Cloud erstellen (Webserver und Datenbank)**
 1. Mit *vagrant init* Vagrantfile im gewünschten Verzeichnis erstellt.
@@ -230,7 +234,7 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
 ## 06 - Wissenszuwachs
 
 **Linux**
-Hat sich mit ein paar Recherche gesteigert 
+Meine Linux kenntnise 
 
 **Virtualisierung**
 Bei der Virtualisierung war mein Vorwissen schon recht gut das konnte ich noch im Bericht Linux verbessern.
@@ -242,9 +246,10 @@ Vagrant war für mich neu Land das mir im Verlauf der LB01
 Die Versionsverwaltung hat sich sehr positiv bewährt, weil ich jede Veränderung im Vagrantfile sofort erkennen konnte. 
 
 **Markdown**
-Mit den Erstellen von Markdown funktionierte es von Anfang an gut. 
+Mit den Erstellen von Markdown funktionierte es von Anfang an gut. Es brauchte eine gewisse zeit um ein paar  
 
 **Systemsicherheit**
+Bei implementieren der Sicherheitsaspekten
 
 ## 07 - Reflektion
 Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. Am Anfang
