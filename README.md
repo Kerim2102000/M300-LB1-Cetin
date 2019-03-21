@@ -45,13 +45,13 @@
 
 ## 03 - Wissenstand
 ### 03.1 - Linux
-Linux Grundkenntnisse sind vorhanden jedoch im Betrieb eher gelegentlich zu tun.
+Linux Grundkenntnisse sind vorhanden jedoch im Betrieb eher gelegentlich zu tun. Zu hause ein paar Test VMs gemacht um in das Thema besser reinzukommen und Erfahrungen zu sammeln. 
 
 ### 03.2 - Virtualisierung
 Erfahrung in Virtualisierung mit ESXi, VMware und Virtual Box. Server Umgebungen Virtualisierung im Betrieb geplant und ausgeführt. 
 
 ### 03.3 - Vagrant
-Noch keine Vorkenntnisse vorhanden.
+Noch keine Vorkenntnisse vorhanden. Vagrant hört sich aber sehr interessant an. 
 
 ### 03.4 - Versionverwaltung/Git
 Erfahrung im Betrieb mit Versionverwaltung Document Management Systemen und Cloud. Mit GitHub noch wenige Erfahrungen gemacht. Grundsätzlich sollte es mir nicht schwer fallen mit GitHub zu arbeiten. 
