@@ -1,3 +1,4 @@
+
 # **Modul 300 LB1 Dokumentation** 
 
 # Inhaltsverzeichnis
@@ -26,7 +27,7 @@
     - [06.4 - Versionverwaltung/Git](#06.4---Versionverwaltung/Git)
     - [06.5 - Markdown](#06.5---Markdown) 
     - [06.6 - Systemsicherheit](#06.6---Systemsicherheit)     
-  - [07 - Reflektion](#04---Reflektion)
+  - [07 - Reflektion](#07---Reflektion)
 
 ## 01 - Umgebung
 * Vagrant
@@ -185,11 +186,6 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
     ProxyPassReverse /master http://master
 
 
-### 05.3 - SSH-Tunnel
-
-
-
-
 ### 05.4 - Webserver per HTTPS sichern
 
     # Default Konfiguration in /etc/apache2/sites-available freischalten (wird nach sites-enabled verlinkt
@@ -234,7 +230,6 @@ Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen
     sudo service apache2 restart
 
 
-
 ## 06 - Wissenszuwachs
 
 ### 06.1 - Linux
@@ -259,8 +254,3 @@ Bei implementieren der Sicherheitsaspekten verlief alles recht gut es gab keine 
 ## 07 - Reflektion
 Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. Am Anfang
 hatte ich ein paar Probleme mit der Datenbank irgendwas funktionierte nich mit den Zugriffsrechten.  
-
-
-
-
-
