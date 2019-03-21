@@ -1,15 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure("1") do |config|
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
-
-  # Every Vagrant virtual environment requires a box to build off of.
   config.vm.define "database01" do |db|
     db.vm.box = "ubuntu/xenial64"
 	db.vm.provider "virtualbox" do |vb|
@@ -17,8 +10,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	end
     db.vm.hostname = "database01"
     db.vm.network "private_network", ip: "192.168.10.100"
-    # MySQL Port nur im Private Network sichtbar
-	# db.vm.network "forwarded_port", guest:3306, host:3306, auto_correct: false
   	db.vm.provision "shell", path: "db.sh"
   end
   
@@ -26,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web.vm.box = "ubuntu/xenial64"
     web.vm.hostname = "webserver01"
     web.vm.network "private_network", ip:"192.168.10.101" 
-	web.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
+	web.vm.network "forwarded_port", guest:443 host:8080, auto_correct: true
 	web.vm.provider "virtualbox" do |vb|
 	  vb.memory = "512"  
 	end     
@@ -45,18 +36,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		sudo a2enconf adminer.conf 
 		sudo service apache2 restart 
 		echo '127.0.0.1 localhost webserver01\n192.168.10.100 database01' > /etc/hosts
-		
-		#Reverse Proxy installieren
-		sudo apt-get -y install libapache2-mod-proxy-html
-		sudo apt-get -y install libxml2-dev
-		
-		#Reverse Proxy module unter Apache aktivieren
-		sudo a2enmod proxy
-		sudo a2enmod proxy_html
-		sudo a2enmod proxy_http
-
+	
 		#SSH port 22 für host Ip erlauben
-			#sudo ufw allow from 10.71.10.xxx to any port 22
+			sudo ufw allow from 10.4.57.55 to any port 22
 			#Port 3306 für MySQL für den Webserver öffnen
 			sudo ufw allow from 192.168.10.101 to any port 3306
 
