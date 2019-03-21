@@ -18,7 +18,6 @@
   - [05 - Sicherheitsaspekte](#05---Sicherheitsaspekte)
     - [05.1 - UFW - Firwall](#05.1---UFW-Firewall)
     - [05.2 - Reverse-Proxy](#05.2---Reverse-Proxy)
-    - [05.3 - SSH-Tunnel](#05.3---SSH-Tunnel)
     - [05.4 - Webserver per HTTPS sichern](#05.4---Webserver-per-HTTPS-sichern)
   - [06 - Wissenzuwachs](#06---Wissenzuwachs)
     - [06.1 - Linux](#06.1---Linux)
