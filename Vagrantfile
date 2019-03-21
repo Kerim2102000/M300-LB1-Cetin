@@ -44,7 +44,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		echo "Alias /adminer.php /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
 		sudo a2enconf adminer.conf 
 		sudo service apache2 restart 
-	  echo '127.0.0.1 localhost webserver01\n192.168.10.100 database01' > /etc/hosts
+		echo '127.0.0.1 localhost webserver01\n192.168.10.100 database01' > /etc/hosts
+		
+		#Reverse Proxy installieren
+		sudo apt-get -y install libapache2-mod-proxy-html
+		sudo apt-get -y install libxml2-dev
+		
+		#Reverse Proxy module unter Apache aktivieren
+		sudo a2enmod proxy
+		sudo a2enmod proxy_html
+		sudo a2enmod proxy_http
+
+		#SSH port 22 für host Ip erlauben
+			#sudo ufw allow from 10.71.10.xxx to any port 22
+			#Port 3306 für MySQL für den Webserver öffnen
+			sudo ufw allow from 192.168.10.101 to any port 3306
+
 SHELL
 	end  
  end
