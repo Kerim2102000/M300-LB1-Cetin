@@ -19,6 +19,7 @@
     - [05.1 - UFW - Firwall](#05.1---UFW-Firewall)
     - [05.2 - SSH-Zugriff](#05.2---SSH-Zugriff)
     - [05.3 - Webserver per HTTPS sichern](#05.3---Webserver-per-HTTPS-sichern)
+    - [05.4 - Benutzer](#05.4---Benutzer)
   - [06 - Testfälle](#06---Testfälle)
   - [07 - Wissenzuwachs](#07---Wissenzuwachs)
     - [07.1 - Linux](#07.1---Linux)
@@ -112,6 +113,7 @@ Web Server mit Apache und MySQL User Interface Adminer und Datenbank Server mit 
 Für die Installation der beiden VMs wurde ein Vagrantfile erstellt, in dem alle Angaben wie IP, Hostname, OS etc. befindet. Ausserdem befindet sich ein Shellscript das auf der Datenbankserver MySQL installiert. Auf dem Webserver wurde Apache installiert und auf dem Datenbankserver «Adminer SQL» um die Dantebank über das Web zu verwalten. 
 Das Userinterface ist über https://192.168.10.101/adminer.php erreichbar mit dem User 'admin' anmelden. 
 
+
 ## 05 - Sicherheitsaspekte
 Beim Sicherheitsaspekt wurde folgende Einstellungen gemacht.
 
@@ -149,7 +151,7 @@ Firewall-Regeln
     sudo ufw allow from 192.168.10.100 to any port 3306
     exit
 
-Zugriff testen
+Zugriff kann mit diesen Befehle getestet werden
     $ curl -f 192.168.10.101
     $ curl -f 192.168.10.100:3306
 
@@ -200,15 +202,31 @@ Auf eine VM wird mit folgendem Befehl per SSH zugegriffen: vagrant ssh webserver
     # Apache Server neustarten
     sudo service apache2 restart
 
+### 05.4 - Benutzer
+
+#### Webserver
+
+|Benutzer| Funktion  |
+|---|:-:|
+| root | Der Systemverwalter unter Linux |
+| dbadmin | Benutzer der MySQL Datenbank |
+
+#### Database
+
+|Benutzer| Funktion  |
+|---|:-:|
+| root | Der Systemverwalter unter Linux |
+| webadmin | Benutzer des Webservers Apache |
+
 
 ## 06 - Testfälle
 
 |   Test| Resultat  |
 |---|:-:|
-|Vom Client auf https://192.168.10.101/adminer.php zugreifen  | Funktioniert. Das MySQL Adminer Portal (192.168.10.100) wird angezeigt  |
-|Vom Client auf den Webserver (192.168.10.101) zugreifen per SSH |Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall|
-| Vom Client auf die Datenbank (192.168.10.100) zugreifen per SSH |Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall|
-|Mit dem Admin User sich auf die Datenbank anmelden|Die Datenbank aktzeptiert den zugang des Webserver mit dem Admin User|
+| Vom Client auf https://192.168.10.101/adminer.php zugreifen  | Funktioniert. Das MySQL Adminer Portal (192.168.10.100) wird angezeigt  |
+| Vom Client auf den Webserver (192.168.10.101) zugreifen per SSH |  Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall |
+| Vom Client auf die Datenbank (192.168.10.100) zugreifen per SSH |  Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall |
+| Mit dem Admin User sich auf die Datenbank anmelden | Die Datenbank aktzeptiert den zugang des Webserver mit dem Admin User|
 
 
 ## 07 - Wissenszuwachs
