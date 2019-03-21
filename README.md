@@ -200,6 +200,15 @@ Auf eine VM wird mit folgendem Befehl per SSH zugegriffen: vagrant ssh webserver
     sudo service apache2 restart
 
 
+## 05 - Testfälle
+
+|   Test| Resultat  |
+|---|:-:|
+| Vom Client auf https://192.168.10.101/adminer.php zugreifen  | Funktioniert. Das MySQL Adminer Portal (192.168.10.100) wird angezeigt  |
+|   |   |
+|   |   |
+
+
 ## 06 - Wissenszuwachs
 
 ### 06.1 - Linux
@@ -223,4 +232,6 @@ Bei implementieren der Sicherheitsaspekten verlief alles recht gut es gab keine 
 
 ## 07 - Reflektion
 Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. Am Anfang
-hatte ich ein paar Probleme mit der Datenbank irgendwas funktionierte nich mit den Zugriffsrechten. 
+hatte ich ein paar Probleme mit der Datenbank irgendwas funktionierte nich mit den Zugriffsrechten. Mit dieser LB habe ich Vagrant viel besser
+kennen gelernt. Zeitlich bin ich gut mit der LB1 durchgekommen und bin mit meiner Arbeit zufrieden.  
+
