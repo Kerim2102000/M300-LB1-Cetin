@@ -19,14 +19,15 @@
     - [05.1 - UFW - Firwall](#05.1---UFW-Firewall)
     - [05.2 - SSH-Zugriff](#05.2---SSH-Zugriff)
     - [05.3 - Webserver per HTTPS sichern](#05.3---Webserver-per-HTTPS-sichern)
-  - [06 - Wissenzuwachs](#06---Wissenzuwachs)
-    - [06.1 - Linux](#06.1---Linux)
-    - [06.2 - Virtualisierung](#06.2---Virtualisierung)
-    - [06.3 - Vagrant](#06.3---Vagrant)
-    - [06.4 - Versionverwaltung/Git](#06.4---Versionverwaltung/Git)
-    - [06.5 - Markdown](#06.5---Markdown) 
-    - [06.6 - Systemsicherheit](#06.6---Systemsicherheit)     
-  - [07 - Reflektion](#07---Reflektion)
+  - [06 - Testfälle](#06---Testfälle)
+  - [07 - Wissenzuwachs](#07---Wissenzuwachs)
+    - [07.1 - Linux](#07.1---Linux)
+    - [07.2 - Virtualisierung](#07.2---Virtualisierung)
+    - [07.3 - Vagrant](#07.3---Vagrant)
+    - [07.4 - Versionverwaltung/Git](#07.4---Versionverwaltung/Git)
+    - [07.5 - Markdown](#07.5---Markdown) 
+    - [07.6 - Systemsicherheit](#07.6---Systemsicherheit)     
+  - [08 - Reflektion](#08---Reflektion)
 
 ## 01 - Umgebung
 * Vagrant
@@ -200,37 +201,38 @@ Auf eine VM wird mit folgendem Befehl per SSH zugegriffen: vagrant ssh webserver
     sudo service apache2 restart
 
 
-## 05 - Testfälle
+## 06 - Testfälle
 
 |   Test| Resultat  |
 |---|:-:|
 | Vom Client auf https://192.168.10.101/adminer.php zugreifen  | Funktioniert. Das MySQL Adminer Portal (192.168.10.100) wird angezeigt  |
-|   |   |
-|   |   |
+| Vom Client auf den Webserver (192.168.10.101) zugreifen per SSH |  Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall |
+| Vom Client auf die Datenbank (192.168.10.100) zugreifen per SSH |  Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall |
+| Mit dem Admin User sich auf die Datenbank anmelden | Die Datenbank aktzeptiert den zugang des Webserver mit dem Admin User|
 
 
-## 06 - Wissenszuwachs
+## 07 - Wissenszuwachs
 
-### 06.1 - Linux
+### 07.1 - Linux
 Meine Linux kenntnisse haben sich mit recherchen stark verbessert. 
 
-### 06.2 - Virtualisierung
+### 07.2 - Virtualisierung
 Bei der Virtualisierung war mein Vorwissen schon recht gut das konnte ich noch im Bericht Linux verbessern.
 
-### 06.3 - Vagrant
+### 07.3 - Vagrant
 Mit Vagrat zu arbeiten hat sehr viel spass gemacht, es hat mir aufgezeigt das es ein sehr mächtiges Programm ist das vieles bitet. 
 
-### 06.4 - Versionverwaltung/Git
+### 07.4 - Versionverwaltung/Git
 Die Versionsverwaltung hat sich sehr positiv bewährt, weil ich jede Veränderung im Vagrantfile sofort erkennen konnte. 
 
-### 06.5 - Markdown
+### 07.5 - Markdown
 Mit den Erstellen von Markdown funktionierte es von Anfang an gut. Es brauchte eine gewisse zeit um ein schöne Darstellung mit den Grössen und Schriften
 hinzubekommen. Doch am schluss ist mir auch dies gelungen. 
 
-### 06.6 - Systemsicherheit
+### 07.6 - Systemsicherheit
 Bei implementieren der Sicherheitsaspekten verlief alles recht gut es gab keine schwierigkeiten. 
 
-## 07 - Reflektion
+## 08 - Reflektion
 Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. Am Anfang
 hatte ich ein paar Probleme mit der Datenbank irgendwas funktionierte nich mit den Zugriffsrechten. Mit dieser LB habe ich Vagrant viel besser
 kennen gelernt. Zeitlich bin ich gut mit der LB1 durchgekommen und bin mit meiner Arbeit zufrieden.  
