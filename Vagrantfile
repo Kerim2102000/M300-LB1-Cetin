@@ -17,7 +17,7 @@ Vagrant.configure("1") do |config|
     web.vm.box = "ubuntu/xenial64"
     web.vm.hostname = "webserver01"
     web.vm.network "private_network", ip:"192.168.10.101" 
-	web.vm.network "forwarded_port", guest:443 host:8080, auto_correct: true
+	web.vm.network "forwarded_port", guest:80 host:8080, auto_correct: true
 	web.vm.provider "virtualbox" do |vb|
 	  vb.memory = "512"  
 	end     
