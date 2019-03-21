@@ -17,8 +17,8 @@
     - [04.3 - Installation Webserver und Datenbank](#04.3---installation-Webserver-und-Datenbank)
   - [05 - Sicherheitsaspekte](#05---Sicherheitsaspekte)
     - [05.1 - UFW - Firwall](#05.1---UFW-Firewall)
-    - [05.2 - Reverse-Proxy](#05.2---Reverse-Proxy)
-    - [05.4 - Webserver per HTTPS sichern](#05.4---Webserver-per-HTTPS-sichern)
+    - [05.2 - SSH-Zugriff](#05.2---SSH-Zugriff)
+    - [05.3 - Webserver per HTTPS sichern](#05.3---Webserver-per-HTTPS-sichern)
   - [06 - Wissenzuwachs](#06---Wissenzuwachs)
     - [06.1 - Linux](#06.1---Linux)
     - [06.2 - Virtualisierung](#06.2---Virtualisierung)
@@ -152,40 +152,11 @@ Zugriff testen
     $ curl -f 192.168.10.101
     $ curl -f 192.168.10.100:3306
 
-### 05.2 - Reverse-Proxy
+### 05.2 - SSH-Zugriff
 
-    Installation Dazu müssen folgende Module installiert werden:
-    $ sudo apt-get install libapache2-mod-proxy-html
-    $ sudo apt-get install libxml2-dev
+Auf eine VM wird mit folgendem Befehl per SSH zugegriffen: vagrant ssh webserver01 und vagrant ssh database01
 
-Anschliessend die Module in Apache aktivieren:
-    $ sudo a2enmod proxy
-    $ sudo a2enmod proxy_html
-    $ sudo a2enmod proxy_http
-
-Die Datei /etc/apache2/apache2.conf wie folgt ergänzen:
-    ServerName 192.168.10.101 
-
-Apache-Webserver neu starten:
-    $ sudo service apache2 restart
-
-**Weiterleitung einrichten** 
-
-Die Weiterleitungen sind z.B. in sites-enabled/001-reverseproxy.conf eingetragen:
-
-    # Allgemeine Proxy Einstellungen
-    ProxyRequests Off*
-    <Proxy>
-        Order deny,allow
-        Allow from all
-    </Proxy>
-
-    # Weiterleitungen master
-    ProxyPass /master http://master
-    ProxyPassReverse /master http://master
-
-
-### 05.4 - Webserver per HTTPS sichern
+### 05.3 - Webserver per HTTPS sichern
 
     # Default Konfiguration in /etc/apache2/sites-available freischalten (wird nach sites-enabled verlinkt
     sudo a2ensite default-ssl.conf
@@ -252,4 +223,4 @@ Bei implementieren der Sicherheitsaspekten verlief alles recht gut es gab keine 
 
 ## 07 - Reflektion
 Die LB01 verlief im Grossen ganzen recht gut. Das Erstellen der beiden VM mit Vagrant funktionierte ohne grosse Probleme. Am Anfang
-hatte ich ein paar Probleme mit der Datenbank irgendwas funktionierte nich mit den Zugriffsrechten.  
+hatte ich ein paar Probleme mit der Datenbank irgendwas funktionierte nich mit den Zugriffsrechten. 
