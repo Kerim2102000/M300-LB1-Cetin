@@ -205,10 +205,10 @@ Auf eine VM wird mit folgendem Befehl per SSH zugegriffen: vagrant ssh webserver
 
 |   Test| Resultat  |
 |---|:-:|
-| Vom Client auf https://192.168.10.101/adminer.php zugreifen  | Funktioniert. Das MySQL Adminer Portal (192.168.10.100) wird angezeigt  |
-| Vom Client auf den Webserver (192.168.10.101) zugreifen per SSH |  Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall |
-| Vom Client auf die Datenbank (192.168.10.100) zugreifen per SSH |  Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall |
-| Mit dem Admin User sich auf die Datenbank anmelden | Die Datenbank aktzeptiert den zugang des Webserver mit dem Admin User|
+|Vom Client auf https://192.168.10.101/adminer.php zugreifen  | Funktioniert. Das MySQL Adminer Portal (192.168.10.100) wird angezeigt  |
+|Vom Client auf den Webserver (192.168.10.101) zugreifen per SSH |Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall|
+| Vom Client auf die Datenbank (192.168.10.100) zugreifen per SSH |Funktioniert, da eine SSH Verbindung vom Client her zugelassen wurde in der Firewall|
+|Mit dem Admin User sich auf die Datenbank anmelden|Die Datenbank aktzeptiert den zugang des Webserver mit dem Admin User|
 
 
 ## 07 - Wissenszuwachs
